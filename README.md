@@ -1,6 +1,6 @@
-# RecFix - YouTube Recommendations Manager
+# RecFix - YouTube Recommendations Manager for Firefox
 
-RecFix is a Chrome extension that helps you take control of your YouTube recommendations. It allows you to analyze your current recommendations, filter out unwanted content, and guide YouTube's algorithm towards content you actually want to see.
+RecFix is a Firefox extension that helps you take control of your YouTube recommendations. It allows you to analyze your current recommendations, filter out unwanted content, and guide YouTube's algorithm towards content you actually want to see.
 
 ## Features
 
@@ -16,33 +16,31 @@ RecFix is a Chrome extension that helps you take control of your YouTube recomme
 
 ## Installation
 
-### Loading the Extension in Chrome
+### Loading the Extension in Firefox
 1. Download or clone this repository to your local machine
-2. Open Google Chrome and type `chrome://extensions/` in the address bar
-3. In the top-right corner, enable "Developer mode" (toggle switch)
-4. Click the "Load unpacked" button that appears
+2. Open Firefox and type `about:debugging` in the address bar
+3. Click "This Firefox" in the left sidebar
+4. Click "Load Temporary Add-on"
 5. Navigate to the directory where you downloaded/cloned the extension
-6. Select the directory and click "Open"
+6. Select the `manifest.json` file and click "Open"
 7. The extension should now appear in your extensions list
-8. Click the puzzle piece icon in Chrome's toolbar to pin the extension
+8. Click the extensions menu icon in Firefox's toolbar to pin the extension
 9. The RecFix icon should now be visible in your toolbar
 
 ### Updating the Extension
 1. If you make changes to the extension code:
-   - Return to `chrome://extensions/`
+   - Return to `about:debugging`
    - Find RecFix in the list
-   - Click the refresh icon (↻) to reload the extension
-2. If you download a new version:
-   - Follow the same steps as initial installation
-   - Chrome will update the existing installation
+   - Click "Reload" to update the extension
+2. Note: Temporary add-ons in Firefox need to be reloaded after browser restart
 
 ### Troubleshooting Installation
 - If the extension doesn't load, check for error messages in:
-  - The extensions page (`chrome://extensions/`)
-  - Chrome's Developer Tools console (F12)
+  - The Browser Console (Ctrl+Shift+J or Cmd+Shift+J)
+  - The about:debugging page
 - Ensure all required files are present in the directory
-- Try disabling and re-enabling Developer mode
-- Restart Chrome if issues persist
+- Make sure you're selecting the correct manifest.json file
+- Restart Firefox if issues persist
 
 ### Required Setup
 1. Get a YouTube Data API key:
@@ -85,9 +83,9 @@ RecFix is a Chrome extension that helps you take control of your YouTube recomme
 
 ### Data Storage & Security
 - RecFix operates entirely in your browser and only communicates with YouTube's servers through the official API
-- Your data and preferences are stored locally and are never sent to third-party servers
+- Your data and preferences are stored locally in Firefox's storage and are never sent to third-party servers
 - The extension includes a rate limiter (2 fixes per day) to prevent excessive API usage
-- API keys are stored securely in Chrome's local storage using encryption
+- API keys are stored securely in Firefox's local storage using encryption
 - Regular security audits ensure your data remains protected
 - All operations are performed client-side for maximum privacy
 
@@ -159,7 +157,7 @@ RecFix is a Chrome extension that helps you take control of your YouTube recomme
 - 🎨 Custom themes
 
 ### Under Consideration
-- Firefox/Safari support
+- Safari support
 - Video platform integrations
 - Community features
 - AI-powered analysis
@@ -192,7 +190,7 @@ npx tailwindcss -i ./styles.css -o ./output.css
 ```
 
 ### Debugging
-- Check the browser console for detailed logs
+- Check the Browser Console (Ctrl+Shift+J or Cmd+Shift+J) for detailed logs
 - All logs are prefixed with `[RecFix]`
 - Error messages include stack traces
 - API responses are logged for troubleshooting
@@ -227,4 +225,4 @@ Built with:
 - YouTube Data API v3
 - Tailwind CSS
 - Framer Motion
-- Chrome Extensions API 
+- Firefox Extensions API 
